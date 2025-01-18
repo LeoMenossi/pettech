@@ -8,11 +8,15 @@ import { env } from './env'
 import { ResourceNotFoundError } from './use-cases/errors/resource-not-found-error'
 import { globalErrorHandler } from './utils/global-error-handles'
 import { addressRoutes } from './http/controllers/address/routes'
+import { productRoutes } from "./http/controllers/product/routes"
+import { categoryRoutes } from "./http/controllers/category/routes"
 
 export const app = fastify()
 
 app.register(personRoutes)
 app.register(userRoutes)
 app.register(addressRoutes)
+app.register(productRoutes)
+app.register(categoryRoutes)
 
 app.setErrorHandler(globalErrorHandler)
